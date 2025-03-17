@@ -1,2 +1,7 @@
-# vscode-browser-chooser
-A VSCode extension. You can open the specified browser by Ctrl/Command+Click
+# Browser Chooser
+
+[preview](./res/preview.gif)
+
+## Configeration
+
+`browser-chooser.candidates : chrome, edge`

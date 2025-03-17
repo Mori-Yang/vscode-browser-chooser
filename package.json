@@ -1,0 +1,68 @@
+{
+    "publisher": "mori",
+    "name": "vscode-browser-chooser",
+    "displayName": "Browser Chooser",
+    "version": "0.1.0",
+    "private": true,
+    "packageManager": "pnpm@10.4.1",
+    "description": "Support selecting browser",
+    "repository": {
+        "url": "https://github.com/Mori-Yang/vscode-browser-chooser.git"
+    },
+    "license": "MIT",
+    "categories": [
+        "Other"
+    ],
+    "main": "./dist/index.js",
+    "icon": "res/icon.png",
+    "files": [
+        "dist/*",
+        "res/*"
+    ],
+    "engines": {
+        "vscode": "^1.90.0"
+    },
+    "activationEvents": [
+        "onStartupFinished"
+    ],
+    "contributes": {
+        "commands": [],
+        "configuration": {
+            "title": "Candidate Browsers",
+            "properties": {
+                "browser-chooser.candidates": {
+                    "type": "string",
+                    "default": "chrome, edge",
+                    "description": "Add selected browser"
+                }
+            }
+        }
+    },
+    "scripts": {
+        "build": "tsup src/index.ts --external vscode",
+        "dev": "tsup src/index.ts --external vscode --watch --sourcemap",
+        "update": "vscode-ext-gen --output src/generated/meta.ts",
+        "lint": "eslint .",
+        "package": "vsce package",
+        "publish": "vsce publish --no-dependencies",
+        "pack": "vsce package --no-dependencies",
+        "typecheck": "tsc --noEmit"
+    },
+    "devDependencies": {
+        "@types/node": "^22.13.4",
+        "@types/vscode": "^1.90.0",
+        "@vscode/vsce": "^3.2.2",
+        "eslint": "^9.20.1",
+        "reactive-vscode": "^0.2.10",
+        "tsup": "^8.3.6",
+        "typescript": "^5.7.3",
+        "typescript-eslint": "^8.26.1",
+        "vite": "^6.1.0",
+        "vscode-ext-gen": "^1.0.0"
+    },
+    "pnpm": {
+        "onlyBuiltDependencies": [
+            "esbuild"
+        ]
+    }
+}
