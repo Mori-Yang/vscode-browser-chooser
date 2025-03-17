@@ -1,8 +1,8 @@
 {
-    "publisher": "mori",
+    "publisher": "MoriYang",
     "name": "vscode-browser-chooser",
     "displayName": "Browser Chooser",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "private": true,
     "packageManager": "pnpm@10.4.1",
     "description": "Support selecting browser",
@@ -28,7 +28,6 @@
         "onStartupFinished"
     ],
     "contributes": {
-        "commands": [],
         "configuration": {
             "title": "Candidate Browsers",
             "properties": {

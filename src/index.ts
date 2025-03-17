@@ -1,3 +1,4 @@
+import path from "path";
 import { defineExtension } from "reactive-vscode";
 import { env, TerminalLink, Uri, window, workspace } from "vscode";
 import { configs, displayName } from "./generated/meta";
@@ -34,8 +35,26 @@ const { activate, deactivate } = defineExtension(() => {
                 );
             }
             const candidates = candidatesStr.split(",");
+
             const selectedBrowser = await window.showQuickPick(
-                candidates.map((b) => b.trim()),
+                candidates.map((b) => {
+                    const iconPath = Uri.file(
+                        path.join(
+                            __dirname,
+                            "..",
+                            "res",
+                            "browserIcon",
+                            `${b.trim()}.svg`
+                        )
+                    );
+                    return {
+                        label: b.trim(),
+                        iconPath: {
+                            light: iconPath,
+                            dark: iconPath,
+                        },
+                    };
+                }),
                 { placeHolder: "Select a browser" }
             );
             if (!selectedBrowser) {
@@ -43,15 +62,18 @@ const { activate, deactivate } = defineExtension(() => {
             }
             // change workbench.external-browser
             const innerConfig = workspace.getConfiguration("workbench");
-            innerConfig.update("externalBrowser", selectedBrowser).then(() => {
-                // open
-                env.openExternal(Uri.parse(url)).then((success) => {
-                    if (success) return;
-                    window.showErrorMessage(
-                        `${displayName} encountered some location errors, please contact github.com/Mori-Yang/vscode-browser-chooser.`
-                    );
+            console.log(selectedBrowser);
+            innerConfig
+                .update("externalBrowser", selectedBrowser.label)
+                .then(() => {
+                    // open
+                    env.openExternal(Uri.parse(url)).then((success) => {
+                        if (success) return;
+                        window.showErrorMessage(
+                            `${displayName} encountered some location errors, please contact github.com/Mori-Yang/vscode-browser-chooser.`
+                        );
+                    });
                 });
-            });
         },
     });
 });

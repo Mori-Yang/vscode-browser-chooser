@@ -2,9 +2,9 @@
 // @see https://github.com/antfu/vscode-ext-gen
 
 // Meta info
-export const publisher = "mori"
+export const publisher = "MoriYang"
 export const name = "vscode-browser-chooser"
-export const version = "0.1.0"
+export const version = "0.1.1"
 export const displayName = "Browser Chooser"
 export const description = "Support selecting browser"
 export const extensionId = `${publisher}.${name}`
@@ -15,7 +15,7 @@ export const extensionId = `${publisher}.${name}`
 export type CommandKey = never
 
 /**
- * Commands map registed by `mori.vscode-browser-chooser`
+ * Commands map registed by `MoriYang.vscode-browser-chooser`
  */
 export const commands = {
 } satisfies Record<string, CommandKey>
@@ -45,7 +45,7 @@ export interface ConfigItem<T extends keyof ConfigKeyTypeMap> {
 
 
 /**
- * Configs map registered by `mori.vscode-browser-chooser`
+ * Configs map registered by `MoriYang.vscode-browser-chooser`
  */
 export const configs = {
   /**
