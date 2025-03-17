@@ -7,6 +7,7 @@
     "packageManager": "pnpm@10.4.1",
     "description": "Support selecting browser",
     "repository": {
+        "type": "git",
         "url": "https://github.com/Mori-Yang/vscode-browser-chooser.git"
     },
     "license": "MIT",
@@ -16,6 +17,7 @@
     "main": "./dist/index.js",
     "icon": "res/icon.png",
     "files": [
+        "LICENSE",
         "dist/*",
         "res/*"
     ],
