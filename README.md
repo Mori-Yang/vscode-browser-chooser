@@ -1,6 +1,6 @@
 # Browser Chooser
 
-<img src="./res/preview.gif" />
+![Preview](https://github.com/Mori-Yang/vscode-browser-chooser/blob/master/res/preview.gif)
 
 ## Configeration
 
