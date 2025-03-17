@@ -1,11 +1,10 @@
-import path from "path";
 import { defineExtension } from "reactive-vscode";
 import { env, TerminalLink, Uri, window, workspace } from "vscode";
 import { configs, displayName } from "./generated/meta";
 
 // See https://kermanx.com/reactive-vscode/guide/
 // for the doc about the reactive-vscode
-const { activate, deactivate } = defineExtension(() => {
+const { activate, deactivate } = defineExtension((ctx) => {
     window.registerTerminalLinkProvider({
         provideTerminalLinks(context) {
             const urlRegex = /http?:\/\/[^\s]+/g;
@@ -39,13 +38,7 @@ const { activate, deactivate } = defineExtension(() => {
             const selectedBrowser = await window.showQuickPick(
                 candidates.map((b) => {
                     const iconPath = Uri.file(
-                        path.join(
-                            __dirname,
-                            "..",
-                            "res",
-                            "browserIcon",
-                            `${b.trim()}.svg`
-                        )
+                        ctx.asAbsolutePath(`res/browserIcon/${b.trim()}.svg`)
                     );
                     return {
                         label: b.trim(),

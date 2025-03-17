@@ -2,7 +2,7 @@
     "publisher": "MoriYang",
     "name": "vscode-browser-chooser",
     "displayName": "Browser Chooser",
-    "version": "0.1.3",
+    "version": "0.1.4",
     "private": true,
     "packageManager": "pnpm@10.4.1",
     "description": "Support selecting browser",
@@ -44,7 +44,6 @@
         "dev": "tsup src/index.ts --external vscode --watch --sourcemap",
         "update": "vscode-ext-gen --output src/generated/meta.ts",
         "lint": "eslint .",
-        "package": "vsce package",
         "publish": "vsce publish --no-dependencies",
         "pack": "vsce package --no-dependencies",
         "typecheck": "tsc --noEmit"
