@@ -1,6 +1,6 @@
 # Browser Chooser
 
-[preview](./res/preview.gif)
+<img src="./res/preview.gif" />
 
 ## Configeration
 
