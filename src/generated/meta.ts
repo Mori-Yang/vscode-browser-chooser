@@ -6,7 +6,7 @@ export const publisher = "MoriYang"
 export const name = "vscode-browser-chooser"
 export const version = "0.1.5"
 export const displayName = "Browser Chooser"
-export const description = "Support selecting browser"
+export const description = "You can specify the browser to open the URL on the Termnial."
 export const extensionId = `${publisher}.${name}`
 
 /**

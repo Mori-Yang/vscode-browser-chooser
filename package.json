@@ -2,10 +2,10 @@
     "publisher": "MoriYang",
     "name": "vscode-browser-chooser",
     "displayName": "Browser Chooser",
-    "version": "0.1.5",
+    "version": "0.1.6",
     "private": true,
     "packageManager": "pnpm@10.4.1",
-    "description": "Support selecting browser",
+    "description": "You can specify the browser to open the URL on the Termnial.",
     "repository": {
         "type": "git",
         "url": "https://github.com/Mori-Yang/vscode-browser-chooser.git"
