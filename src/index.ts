@@ -38,7 +38,7 @@ const { activate, deactivate } = defineExtension((ctx) => {
             const selectedBrowser = await window.showQuickPick(
                 candidates.map((b) => {
                     const iconPath = Uri.file(
-                        ctx.asAbsolutePath(`res/browserIcon/${b.trim()}.svg`)
+                        ctx.asAbsolutePath(`res/${b.trim()}.svg`)
                     );
                     return {
                         label: b.trim(),

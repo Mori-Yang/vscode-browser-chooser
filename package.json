@@ -2,7 +2,7 @@
     "publisher": "MoriYang",
     "name": "vscode-browser-chooser",
     "displayName": "Browser Chooser",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "private": true,
     "packageManager": "pnpm@10.4.1",
     "description": "Support selecting browser",
