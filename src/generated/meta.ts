@@ -4,7 +4,7 @@
 // Meta info
 export const publisher = "MoriYang"
 export const name = "vscode-browser-chooser"
-export const version = "0.1.1"
+export const version = "0.1.2"
 export const displayName = "Browser Chooser"
 export const description = "Support selecting browser"
 export const extensionId = `${publisher}.${name}`
